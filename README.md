@@ -105,8 +105,23 @@ We can see that Correlation of Trend with Volatility is less spiked as time rang
 ### 1-day vs. 3-day vs. 7-day (Daily Close Price - Daily Open Price) Correlation: with r1 = -0.00513, r3 = -0.0055, r7 = -0.0067
 <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/1dayTrend_priceCloseOpenDiff.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/3dayTrend_CloseOpenDiff_corr.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/7dayArithmetic_CloseOpenPriceDiff_Corr.png" height="180">
 
+# Step 4: Correlation Modeling on a More Informative Subset of Stock Symbols
 
+Notice that in our select of stock symbols, there are symbols such as 'a', which we don't really know if the person searching 'a' is looking for "Agilent Technologies" which has abbreviation "a" or just typing random things. 
 
+### Therefore we limit the set of symbols we look at to smaller and more informative subset, namely symbols with length >= 3.
 
+### Now the plots over different trade features:
+
+### 1-day vs. 3-day vs. 7-day Volatility Correlation: with r1 = 0.11, r3 = 0.1143, r7 = 0.082.
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/1dayTrend_Volume_Corr.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/3dayArithmeticTrend_volume_corr.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/7dayArithmeticTrend_Volume_Corr.png" height="180">
+
+We can see that Correlation of Trend with Volatility is less spiked as time range considered is longer. This is because information is dispersed. And it also seems 3-day average is most predictive, which can be think of either (1) appropriate time needed (eigen time) for information to propagate to Google Trend or (2) Saturday and Sunday's cumulative effect on Monday.
+
+### 1-day vs. 3-day vs. 7-day (Max Daily Price - Min Daily Price) Correlation: with r1 = 0.068, r3 = 0.064, r7 = 0.0425.
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/1dayTrend_priceMaxMinDiff.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/3dayArithmeticTrend_priceMaxMinDiff_corr.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/7dayArithmetic_MaxMinPrice_Corr.png" height="180">
+
+### 1-day vs. 3-day vs. 7-day (Daily Close Price - Daily Open Price) Correlation: with r1 = -0.0044, r3 = -0.0063, r7 = -0.0064
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/1dayTrend_priceCloseOpenDiff.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/3dayTrend_CloseOpenDiff_corr.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/7dayArithmetic_CloseOpenPriceDiff_Corr.png" height="180">
 
 # Midterm Conclusion and Future plans

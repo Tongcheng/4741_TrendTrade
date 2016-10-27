@@ -76,10 +76,9 @@ First attempt we try is using all 500 S&P stock symbols, with two perspectives:
 
 ### Currently the criterion we will examine is for all 3-month windows combined, we look at the histogram of r (the correlation coefficient).
 
-So the histogram of r using 1 day google Trend information with Google
+The histogram of r using 1 day google Trend information with volume traded, with mean correlation = 0.097:
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/1dayTrend_Volume_Corr.png" height="240">
+
 
 
 # Midterm Conclusion and Future plans
-
-
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/1dayTrend_Volume_Corr.png" height="240">

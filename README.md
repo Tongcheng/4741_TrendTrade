@@ -9,7 +9,11 @@ We want to find how information of Google Trends contribute to the formation of 
 
 (1) How does the Google Trend of stock abbreviated symbols (for example: AAPL for apple stock) indicate price change of the day, max price difference of the day and volume of the day.
 
+Intuitively, we think something that cause significant change in price or volume can be represented in Google Trend information.
+
 (2) How does the Google Trend of stock abbreviated symbols (for example: AAPL for apple stock) plus some fundamental terminology (For example: debt, EPS (earning per share) etc.) contribute to a stock's price and volume.
+
+This question is more interesting because when fundamental investors search for "AAPL EPS", they are looking for specific information of the stock, which indicates they are more likely (than usual) to buy/sell the stock.
 
 
 

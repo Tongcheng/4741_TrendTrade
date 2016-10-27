@@ -47,9 +47,14 @@ So Google returns daily granularity for Google Trend for date range queries less
 
 # Step 2: Data Cleanup
 
-For CSV files downloaded, we want to verify it is correct before using it since there exist possibility of typing the wrong query before download. We do this verification by noticing (1) The name in csv file is same as intended, (2) The length of
+For CSV files downloaded, we want to verify it is correct before using it since there exist possibility of typing the wrong query before download. We do this verification by noticing (1) The name in csv file is same as intended, (2) The number of useful information in each csv should be between [89,92]. 
+
+### Then we define our problem concretely as follows: For each 3-month time frame, given complete Google Trend data and trade data(only happens on business days, which excludes weekends and holidays), try to model the correlation.
 
 # Step 3: Correlation Modeling
+First 
+
+
 
 # Midterm Conclusion and Future plans
 

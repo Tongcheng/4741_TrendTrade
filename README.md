@@ -82,6 +82,7 @@ The histogram of r using 1 day Google Trend information with volume traded, with
 From this plot, even though the correlation information seems low, it is actually very high based on stock markets being very noisy. And this plot has some portion with almost 1 correlation which is interesting.
 
 The histogram of r using 1 day Google Trend information with (max price of day - min price of day), with mean correlation = 0.0594.
+
 <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/1dayTrend_priceCloseOpenDiff.png" height="240">
 
 

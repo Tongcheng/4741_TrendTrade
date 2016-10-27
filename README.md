@@ -5,3 +5,4 @@ In this project, we want to identify relations between Google Trend data and Sto
 
 ![alt tag](https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/1dayTrend_Volume_Corr.png)
 
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/1dayTrend_Volume_Corr.png" height="24">

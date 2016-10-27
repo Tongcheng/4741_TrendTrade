@@ -124,4 +124,7 @@ We can see that Correlation of Trend with Volatility is less spiked as time rang
 ### 1-day vs. 3-day vs. 7-day (Daily Close Price - Daily Open Price) Correlation: with r1 = -0.0044, r3 = -0.0063, r7 = -0.0064
 <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/1Day_CloseOpen_Corr.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/3day_CloseOpenPriceDiff_Corr.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/7day_CloseOpenPriceDiff_Corr.png" height="180">
 
+### After this cleanup, our mean correlation is becoming larger in magnitude, which means filter out short name symbols will increase information in Google Trend signal.
+
 # Midterm Conclusion and Future plans
+In the Future

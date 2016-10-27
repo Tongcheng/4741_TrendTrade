@@ -45,6 +45,8 @@ This is solved by using VPN at different locations and using incognito mode in b
 
 So Google returns daily granularity for Google Trend for date range queries less than 4 months, and the second level is weekly granularity, and the third level is monthly granularity. Therefore in our case, we query every 3 months.
 
+#### (5): Network latency is hard to predict, therefore need redundant time between clicks.
+
 ### So Google Trend data we gathered is the 2010-2012's three year data for each abbreviated symbol. Each symbol requires 12 downloads since we are doing 3 month length query range every download.
 
 # Step 2: Data Cleanup

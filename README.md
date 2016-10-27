@@ -127,4 +127,7 @@ We can see that Correlation of Trend with Volatility is less spiked as time rang
 ### After this cleanup, our mean correlation is becoming larger in magnitude, which means filter out short name symbols will increase information in Google Trend signal.
 
 # Midterm Conclusion and Future plans
-In the Future
+
+In the Future, I plan to combine fundamental terminologies' Google Trend into the stock symbol, which will involve more downloading of the data and enlarging the existing dataset.
+
+And the statistical testing mechanism in the future might involve hypothetical strategies and backtesting to see if the strategy works. That is, to see if we can operationally benefit from the Google Trend Information.

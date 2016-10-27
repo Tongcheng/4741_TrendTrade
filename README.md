@@ -95,7 +95,7 @@ From this plot, we notice that change of price of the day is negatively correlat
 
 ### Then we examine over different time averages of Google Trend:
 ### 1-day vs. 3-day vs. 7-day Volatility Correlation:
-
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/1dayTrend_Volume_Corr.png" height="240"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/3dayArithmeticTrend_volume_corr.png" height="240"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/7dayArithmeticTrend_Volume_Corr.png" height="240">
 
 
 ### 1-day vs. 3-day vs. 7-day (Max Daily Price - Min Daily Price) Correlation:

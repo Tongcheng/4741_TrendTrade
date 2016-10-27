@@ -35,7 +35,9 @@ Opening a new tab or window will systematically destroy our GUI automation to ga
 
 In OS X environment I am using, in order to prevent new tabs, I used a chrome extension of xtab, which limits the number of tabs you can open. We set this limit to 1. In order to prevent new windows, I used a mac software called Keyboard Maestro, which changes the hotkey actions, to change (Shift + Enter)'s effect to go to Keyboard Maestro's official website, but this effect will be cancelled by new tab limit. Therefore new tab and new window problem is solved.
 
-####(3): Google seems to block IP if we search too much Google Trends, this is solved by using VPN at different locations and using incognito mode in browser. It is necessary to change the VPN every 2 hours (Maybe next step can be changing the VPN automatically).
+####(3): Google seems to block IP if we search too much Google Trends. 
+
+This is solved by using VPN at different locations and using incognito mode in browser. It is necessary to change the VPN every 2 hours (Maybe next step can be changing the VPN automatically).
 
 # Step 2: Data Cleanup
 

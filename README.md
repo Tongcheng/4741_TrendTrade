@@ -55,7 +55,7 @@ For CSV files downloaded, we want to verify it is correct before using it since 
 
 Then we notice the map from Trade entries to Trend entries is a one-to-one but not onto mapping. This is equivalent to saying, for each trade entry, there is a trend entry, but not the other way around.
 
-# Step 3: Correlation Modeling
+# Step 3: Correlation Modeling on Complete S&P 500 Symbols
 First attempt we try is using all 500 S&P stock symbols, with two perspectives:
 
 ### Perspective I:

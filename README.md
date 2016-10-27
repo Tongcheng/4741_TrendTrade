@@ -70,6 +70,9 @@ First attempt we try is using all 500 S&P stock symbols, with two perspectives:
 
 (3): Try to model (Close price - Open price) of the day.
 
+### Currently the criterion we will examine is for all 3-month windows combined, we look at the histogram of r (the correlation coefficient).
+
+
 
 # Midterm Conclusion and Future plans
 

@@ -52,8 +52,23 @@ For CSV files downloaded, we want to verify it is correct before using it since 
 ### Then we define our problem concretely as follows: For each 3-month time frame, given complete Google Trend data and trade data(only happens on business days, which excludes weekends and holidays), try to model the correlation.
 
 # Step 3: Correlation Modeling
-First 
+First attempt we try is using all 500 S&P stock symbols, with two perspectives:
 
+### Perspective I:
+
+(1): Using the current day Google Trend data to model trading information.
+
+(2): Using the past 3-day arithmetic average to model trading information.
+
+(3): Using the past 7-day arithmetic average to mdoel trading information.
+
+### Perspective II:
+
+(1): Try to model Volume traded.
+
+(2): Try to model Max Price Difference (Daily High Price - Daily Low Price) of the day.
+
+(3): Try to model (Close price - Open price) of the day.
 
 
 # Midterm Conclusion and Future plans

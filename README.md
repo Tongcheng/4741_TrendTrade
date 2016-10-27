@@ -93,6 +93,15 @@ There is certainly a positive correlation between daily price range (can be thin
 
 From this plot, we notice that change of price of the day is negatively correlated with Google Trend of the day, this can be explained by volatility is asymmetrical in terms of direction. That is, it is more volatile for price to decrease (when stock price plummeted overnight) but not as volatile for price to increase (when price increase steadily though slowly over 3 months due to Good Expectations).
 
+### Then we examine over different time averages of Google Trend:
+### 1-day vs. 3-day vs. 7-day Volatility Correlation:
+
+
+
+### 1-day vs. 3-day vs. 7-day (Max Daily Price - Min Daily Price) Correlation:
+
+### 1-day vs. 3-day vs. 7-day (Daily Close Price - Daily Open Price) Correlation:
+
 
 
 

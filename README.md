@@ -17,7 +17,13 @@ Intuitively, we think something that cause significant change in price or volume
 
 This question is more interesting because when fundamental investors search for "AAPL EPS", they are looking for specific information of the stock, which indicates they are more likely (than usual) to buy/sell the stock. From one perspective, this is similar to sentiment indicator which tries to measure the sentiment of a stock in the market.
 
-# Step 1: Google Trend Data Gathering
+# Step 1: Data Gathering
+
+Our S&P500 price and volume daily data was from https://quantquote.com/historical-stock-data.
+
+But for our Google Trend data because (1): Google doesn't have an Official API to query Google Trend, (2): Google's unofficial API (I tried one python library called pytrends) was rate limited in a blackbox fashion which limits the efficient and scalable Google Trend data gathering, I have devise some method to gather the data.
+
+The way I use to gather data is simulate manual process of typing a URL in browser, and click 
 
 # Step 2: Data Cleanup
 

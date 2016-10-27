@@ -11,6 +11,8 @@ We want to find how information of Google Trends contribute to the formation of 
 
 ### (1) How does the Google Trend of stock abbreviated symbols (for example: AAPL for apple stock) indicate price change of the day, max price difference of the day and volume of the day.
 
+This question is interesting because when Google Trend of a stock in spiked, it could mean some major events happened to the company, for example, Apple launched its new products.
+
 ### (2) How does the Google Trend of stock abbreviated symbols (for example: AAPL for apple stock) plus some fundamental terminology (For example: debt, EPS (earning per share) etc.) contribute to a stock's price and volume.
 
 This question is more interesting because when fundamental investors search for "AAPL EPS", they are looking for specific information of the stock, which indicates they are more likely (than usual) to buy/sell the stock. From one perspective, this is similar to sentiment indicator which tries to measure the sentiment of a stock in the market.
@@ -51,6 +53,8 @@ For CSV files downloaded, we want to verify it is correct before using it since 
 
 ### Then we define our problem concretely as follows: For each 3-month time frame, given complete Google Trend data and trade data(only happens on business days, which excludes weekends and holidays), try to model the correlation.
 
+Then we notice the map from Trade entries to Trend entries is a one-to-one but not onto mapping. This is equivalent to saying, for each trade entry, there is a trend entry, but not the other way around.
+
 # Step 3: Correlation Modeling
 First attempt we try is using all 500 S&P stock symbols, with two perspectives:
 
@@ -60,7 +64,7 @@ First attempt we try is using all 500 S&P stock symbols, with two perspectives:
 
 (2): Using the past 3-day arithmetic average to model trading information.
 
-(3): Using the past 7-day arithmetic average to mdoel trading information.
+(3): Using the past 7-day arithmetic average to model trading information.
 
 ### Perspective II:
 
@@ -72,6 +76,7 @@ First attempt we try is using all 500 S&P stock symbols, with two perspectives:
 
 ### Currently the criterion we will examine is for all 3-month windows combined, we look at the histogram of r (the correlation coefficient).
 
+So the histogram of r using 1 day google Trend information with Google
 
 
 # Midterm Conclusion and Future plans

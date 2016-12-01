@@ -132,17 +132,20 @@ Therefore we attempt with the first kind of normalization for Y, which is dividi
 
 So for example, the scatter plot of GoogleTrend of the day (X variable) and Normalized Volume Traded:
 
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_scatter_withoutNormX.png" height="360">
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_scatter_withoutNormX.png" height="240">
 
 While using Ordinary Linear Regression, our fitted line looks like:
 
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_Line_withoutNormX.png" height="360">
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_Line_withoutNormX.png" height="240">
 
 Combine the scatter plot with Ordinary Linear Regression:
 
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_line_scatter_withoutNormX.png" height="360">
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_line_scatter_withoutNormX.png" height="240">
 
-The weights for Linear Regression for Normalized Volume is: coefficient for 2 days before = -2.19 * 1e-3, coefficient for 1 day before = 3.73 * 1e-4, coefficient for current day is 2.99* 1e-3.
+The weights for Linear Regression for Normalized Volume is: coefficient for 2 days before = -2.19 * 1e-3, coefficient for 1 day before = 3.73 * 1e-4, coefficient for current day is 2.99* 1e-3, intercept is 9.24*1e-1.
+
+Notice that in the line plot, even though our X axis is only current day's google trend, the corresponding Y is the predicted Y that considers Google Trend 2 days before and Google Trend 1 day before.
+
 
 
 

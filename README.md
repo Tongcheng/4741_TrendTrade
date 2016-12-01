@@ -240,4 +240,23 @@ The error distribution is the following:
 
 # Step 8: Quantile Regression
 
+Then I try Quantile Regression to model the top Volume changes, quantile regression models the response variable (y) for a given quantile (q) conditioned on variable x. In my case, variable x is vector with 3 elements, namely: Z-score of Google Trend 3 days before, Z-score Google Trend 2 days before and Z-score Google Trend 1 day before. The Y variable is Z-score of the volume traded. 
+
+The 10 quantile lines for quantile = {50,55,60,...,95} is plotted as follows:
+
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/50_95_5_QuantileLines.png" height="240">
+
+The picture is the ten regression lines, the higher up the line is, the higher up percentile it represents. For ease of visualization, the x-axis only included the 1 day before Google Trend Z-score. Though the predicted y for certain percentile included all 3 days' information.
+
+The regression line within a subset of datapoints is the following:
+
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/50_95_5_QuantileScatter.png" height="240">
+
+The regression line within all datapoints is the following:
+
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/50_95_5_bigScatter.png" height="240">
+
+
+
+
 

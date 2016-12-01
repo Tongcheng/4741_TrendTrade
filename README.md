@@ -264,5 +264,9 @@ Within some subset of data points (Left) and all datapoints (Right), the regress
 
 <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/90_99_1_Scatter.png" height="240"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/90_99_1_BigScatter.png" height="240">
 
+One observation for quantile regression and both the scatter plot with small subset of datapoints and the scatter plot with big subset of datapoints is, even though the top quantiles look deviated from the perspective of relatively small subset of scatter plots, it does make sense in the case of bigger set of datapoints. In other words, top quantiles is a reasonable regression given enough data.
+
+
+
 
 

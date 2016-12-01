@@ -178,24 +178,25 @@ Similarly, we have similar considerations for Y variables (Volume, (Max - Min) d
 
 We treat the Y values by also using Z-score as feature transformation (remove mean than devide by standard deviation).
 
-
-
 The following plot gives us what the scattered points and line looks like:
 
-
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_Z_ScatterLine.png" height="240">
 
 The following plot gives us what the regression line looks like (Notice that the regressed line, even though we only showed the x-axis with ) :
 
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_Z_line.png" height="240">
 
+The above plots are made using 1000 data points drawn randomly from the dataset.
 
 Then we calculate the mean absolute error, which turns out to be 0.3, this looks moderately decent.
 
+The scatter plot for the entire dataset looks like following:
 
-
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/Scatter_Z.png" height="240">
 
 The following plot gives us the error distribution in terms of Z-score of the volume:
 
-
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/error_Distribution_Zscore.png" height="240">
 
 According to the error Distribution plot, the error distribution do have fat tail in the negative direction. And Z = Z_pred - Z_true = -4 does occur for few data points' predictions. I think this corresponds to Z_true = Z_pred + 4, which is underestimated Volume traded.
 

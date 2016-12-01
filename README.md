@@ -178,6 +178,8 @@ Similarly, we have similar considerations for Y variables (Volume, (Max - Min) d
 
 We treat the Y values by also using Z-score as feature transformation (remove mean than devide by standard deviation).
 
+As an experimental exploration, let's just focus on Volume traded for now.
+
 The following plot gives us what the scattered points and line looks like:
 
 <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_Z_ScatterLine.png" height="240">
@@ -185,6 +187,8 @@ The following plot gives us what the scattered points and line looks like:
 The following plot gives us what the regression line looks like (Notice that the regressed line, even though we only showed the x-axis with ) :
 
 <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_Z_line.png" height="240">
+
+Calculated over the entire dataset we have the weight vector for Y as Volume traded: weight = -0.00025 for Z-score of Google Trend two days before, weight = 0.023 for Z-score of Google Trend one day before, weight = 0.0534 for Google Trend of the current day and intercept weight = -0.00038.
 
 The above plots are made using 1000 data points drawn randomly from the dataset.
 
@@ -200,8 +204,13 @@ The following plot gives us the error distribution in terms of Z-score of the vo
 
 According to the error Distribution plot, the error distribution do have fat tail in the negative direction. And Z = Z_pred - Z_true = -4 does occur for few data points' predictions. I think this corresponds to Z_true = Z_pred + 4, which is underestimated Volume traded.
 
-Error of 4 standard deviation is absolutely a phenomena. This corresponds to severely under-estimated volume traded which corresponds to black swan events (event that is totally unexpected) but statistically black swan events happens more often than expected.
+Error of 4 standard deviation is absolutely a phenomena. This corresponds to severely under-estimated volume traded which corresponds to black swan events (event that is totally unexpected, originally from the scenario when you suppose a group of swans in the lake are all white swans, until you see a black swan, which changes your previous hypothesis) but statistically black swan events happens more often than expected.
 
+On the other hand, the mode of the error distribution is in Z = +0.3, this verifies what we already know about the ordinary linear regression use maximum likelihood estimation, which is sensitive to outliers.
 
+With Feature Engineering, this Linear Regression Model tells us the following improvements:
 
+(1): There is certainly some black swan events that make certain cases very volatile (So much more volume traded). One way to model such events are using quantile regression for top quantiles, modeling such events are meaningful, as they could, in theory, provide us profitable opportunities if we can foresee black-swan events because people are less rational and more error-prone in trading during black-swan (or totally unexpected) events.
+
+(2): Similar to quantile regression, we cou
 

@@ -280,7 +280,3 @@ And we shall pick the stocks that will really work well for our models.
 
 # Step 10: Alpha Generation and Backtesting
 
-Here I propose two very simple strategies based on our ability to predict (close - open) daily price, and (max - min) daily price.
-
-
-

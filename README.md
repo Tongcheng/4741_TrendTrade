@@ -154,6 +154,8 @@ For Normalized Price for Close - Open price, called NormalizedCloseOpenRatio = (
 
 This regression has regression weight -2.003 * 1e-6 for Google Trend 2 days before, weight 9.91 * 1e-7 for Google Trend 1 day before, weight -9.24 * 1e-7 for current day's Google Trend and intercept 2.77 * 1e-4.
 
+This means simply using Linear Regression is not satisfactory.
+
 
 
 

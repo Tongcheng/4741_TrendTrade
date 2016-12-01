@@ -125,7 +125,7 @@ We can see that Correlation of Trend with Volatility is less spiked as time rang
 
 ### After this cleanup, our mean correlation is becoming larger in magnitude, which means filter out short name symbols will increase information in Google Trend signal.
 
-# Step 5: Linear Regression 
+# Step 5: Linear Regression (A Failed Attempt) 
 First, we try to model the Volume Traded using past 3 days' Google Trend with Linear Regression.
 Intuitively, overall Volume should be normalized because large cap stocks will be traded with larger daily volume therefore if we didn't normalize, the prediction will be biased toward large cap stocks. 
 Therefore we attempt with the first kind of normalization for Y, which is dividing the original Y value's 3 month average.
@@ -154,9 +154,23 @@ For Normalized Price for Close - Open price, called NormalizedCloseOpenRatio = (
 
 This regression has regression weight -2.003 * 1e-6 for Google Trend 2 days before, weight 9.91 * 1e-7 for Google Trend 1 day before, weight -9.24 * 1e-7 for current day's Google Trend and intercept 2.77 * 1e-4.
 
-This means simply using Linear Regression is not satisfactory.
+This means simply using Linear Regression is not satisfactory, because it offer almost no predictive power in this case.
 
+# Step 6: Linear Regression with Feature Engineering
 
+Next, we define what really should be our objectives and use cases of Google Trend. 
+
+Qualitatively the following holds: Google Trend of a stock's abbreviation, as a indicator, varies some amount by each day, and some proportion of the variation is correlated with the stock's volume or price change.
+
+But this does not necessarily mean this qualitative statement can be easily converted to a quantitative statement. Consider the following 2 examples: 
+
+Example 1: ABC, which stands for AmerisourceBergen Corp, a healthcare company, can also refer to English Alphabet in general. And when people are typing ABC, most of the cases are they are referring to the English Alphabet, therefore the Google Trend for ABC have a very small signal to noise ratio. 
+
+Example 2: AAPL, which stands for Apple Inc, is not naturally a word. And at least as far as I know, AAPL does not have any connotations other than referring to the company Apple. Therefore the Google Trend for AAPL have a large signal to noise ratio.
+
+Based on this observation, intuitively we want to "normalize" the signal to noise ratio for each company so that each abbreviation's Google Trend, after some feature transformation, should have similar impacts. 
+
+We do this by the classical trick: First remove the mean, then devide by standard deviation. (Both mean and standard deviation is calculated using the 3 month horizen.)
 
 
 

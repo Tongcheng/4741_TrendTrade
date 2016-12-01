@@ -127,7 +127,9 @@ We can see that Correlation of Trend with Volatility is less spiked as time rang
 
 # Step 5: Linear Regression (A Failed Attempt) 
 First, we try to model the Volume Traded using past 3 days' Google Trend with Linear Regression.
+
 Intuitively, overall Volume should be normalized because large cap stocks will be traded with larger daily volume therefore if we didn't normalize, the prediction will be biased toward large cap stocks. 
+
 Therefore we attempt with the first kind of normalization for Y, which is dividing the original Y value's 3 month average.
 
 So for example, the scatter plot of GoogleTrend of the day (X variable) and Normalized Volume Traded:
@@ -172,7 +174,17 @@ Based on this observation, intuitively we want to "normalize" the signal to nois
 
 We do this by the classical trick: First remove the mean, then devide by standard deviation. (Both mean and standard deviation is calculated using the 3 month horizen.)
 
+Similarly, we have similar considerations for Y variables (Volume, (Max - Min) daily price,(Close - Open) daily price). For example, some small cap company can be very volatile but most large cap companies tend to be not very volatile (for most time).
 
+We treat the Y values by also using Z-score as feature transformation (remove mean than devide by standard deviation).
+
+
+
+The following plot gives us what the scattered points and line looks like:
+
+
+
+The following plot gives us what the regression line looks like (Notice that the regressed line, even though we only showed the x-axis with ) :
 
 
 

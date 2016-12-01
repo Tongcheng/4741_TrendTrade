@@ -131,13 +131,16 @@ Intuitively, overall Volume should be normalized because large cap stocks will b
 Therefore we attempt with the first kind of normalization for Y, which is dividing the original Y value's 3 month average.
 
 So for example, the scatter plot of GoogleTrend of the day (X variable) and Normalized Volume Traded:
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_scatter_withoutNormX.png" height="180">
+
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_scatter_withoutNormX.png" height="360">
 
 While using Ordinary Linear Regression, our fitted line looks like:
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_Line_withoutNormX.png" height="180">
+
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_Line_withoutNormX.png" height="360">
 
 Combine the scatter plot with Ordinary Linear Regression:
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_line_scatter_withoutNormX.png" height="180">
+
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_line_scatter_withoutNormX.png" height="360">
 
 The weights for Linear Regression for Normalized Volume is: coefficient for 2 days before = -2.19 * 1e-3, coefficient for 1 day before = 3.73 * 1e-4, coefficient for current day is 2.99* 1e-3.
 

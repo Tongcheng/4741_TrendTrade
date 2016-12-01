@@ -125,9 +125,23 @@ We can see that Correlation of Trend with Volatility is less spiked as time rang
 
 ### After this cleanup, our mean correlation is becoming larger in magnitude, which means filter out short name symbols will increase information in Google Trend signal.
 
-# Step 5: Attempt 1: Linear Regression
+# Step 5: Attempt 1: Linear Regression with Normalized_Y = Y/mean_over3month(Y)
 First, we try to model the Volume Traded using past 3 days' Google Trend with Linear Regression.
 Intuitively, overall Volume should be normalized because large cap stocks will be traded with larger daily volume therefore if we didn't normalize, the prediction will be biased toward large cap stocks. 
+Therefore we attempt with the first kind of normalization for Y, which is dividing the original Y value's 3 month average.
+
+So for example, the scatter plot of GoogleTrend of the day (X variable) and Normalized Volume Traded:
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_scatter_withoutNormX.png" height="180">
+
+While using Ordinary Linear Regression, our fitted line looks like:
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_Line_withoutNormX.png" height="180">
+
+Combine the scatter plot with Ordinary Linear Regression:
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_line_scatter_withoutNormX.png" height="180">
+
+The weights for Linear Regression for Normalized Volume is: coefficient for 2 days before = -2.19 * 1e-3, coefficient for 1 day before = 3.73 * 1e-4, coefficient for current day is 2.99* 1e-3.
+
+
 
 
 

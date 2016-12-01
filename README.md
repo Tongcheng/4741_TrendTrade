@@ -125,4 +125,4 @@ We can see that Correlation of Trend with Volatility is less spiked as time rang
 
 ### After this cleanup, our mean correlation is becoming larger in magnitude, which means filter out short name symbols will increase information in Google Trend signal.
 
-# Step 5: Try to use Linear Regression to build a predictive Model
+# Step 5: Linear Regression

@@ -256,7 +256,13 @@ The regression line within all datapoints is the following:
 
 <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/50_95_5_bigScatter.png" height="240">
 
+If we plot the quantile regression for quantile = {0.9,0.91,0.92,...,0.99}, the ten regression line is the following:
 
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/90_99_1_Line.png" height="240">
+
+Within some subset of data points (Left) and all datapoints (Right), the regression line will be the following:
+
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/90_99_1_Scatter.png" height="240"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/90_99_1_BigScatter.png" height="240">
 
 
 

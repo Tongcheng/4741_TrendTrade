@@ -1,7 +1,7 @@
 # 4741 TrendTrade
 This is Project for class ORIE 4741 by Tongcheng Li. 
 
-# Midterm Progress Quick Overview
+# Final Report
 
 In this project, we want to identify relations between Google Trend data and Stock's daily price and volume.
 Specifically, we are interested in the following problems:
@@ -13,9 +13,6 @@ We want to find how information of Google Trends contribute to the formation of 
 
 This question is interesting because when Google Trend of a stock in spiked, it could mean some major events happened to the company, for example, Apple launched its new products.
 
-### (2) How does the Google Trend of stock abbreviated symbols (for example: AAPL for apple stock) plus some fundamental terminology (For example: debt, EPS (earning per share) etc.) contribute to a stock's price and volume.
-
-This question is more interesting because when fundamental investors search for "AAPL EPS", they are looking for specific information of the stock, which indicates they are more likely (than usual) to buy/sell the stock. From one perspective, this is similar to sentiment indicator which tries to measure the sentiment of a stock in the market.
 
 # Step 1: Data Gathering
 
@@ -51,7 +48,7 @@ So Google returns daily granularity for Google Trend for date range queries less
 
 # Step 2: Data Cleanup
 
-For CSV files downloaded, we want to verify it is correct before using it since there exist possibility of typing the wrong query before download. We do this verification by noticing (1) The name in csv file is same as intended, (2) The number of useful information in each csv should be between [89,92]. 
+For CSV files downloaded, we want to verify it is correct before using it since there exist possibility of typing the wrong query before download. First, we merge the CSV file of GoogleTrends to the CSV of prices and volume. So we create a csv file for every 3 months between Year [2010,2012]. As a cleanup, we throw away merge CSV files which have too few trade days or too much trade days, because that would mean something is wrong with it. In particular, we throw away CSV with <= 55 trade days and CSV with >=70 trade days, with the concern that normally there are 21 to 22 trade days per month, and other holidays should not affect every 3 month by more than -8 or +6 days.
 
 ### Then we define our problem concretely as follows: For each 3-month time frame, given complete Google Trend data and trade data(only happens on business days, which excludes weekends and holidays), try to model the correlation.
 

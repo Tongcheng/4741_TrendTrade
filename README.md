@@ -206,7 +206,7 @@ According to the error Distribution plot, the error distribution do have fat tai
 
 Error of 4 standard deviation is absolutely a phenomena. This corresponds to severely under-estimated volume traded which corresponds to black swan events (event that is totally unexpected, originally from the scenario when you suppose a group of swans in the lake are all white swans, until you see a black swan, which changes your previous hypothesis) but statistically black swan events happens more often than expected.
 
-On the other hand, the mode of the error distribution is in Z = +0.3, this verifies what we already know about the ordinary linear regression use maximum likelihood estimation, which is sensitive to outliers.
+On the other hand, the mode of the error distribution is in Z = +0.314, this verifies what we already know about the ordinary linear regression use maximum likelihood estimation, which is sensitive to outliers.
 
 With Feature Engineering, this Linear Regression Model tells us the following improvements:
 

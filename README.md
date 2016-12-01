@@ -188,4 +188,19 @@ The following plot gives us what the regression line looks like (Notice that the
 
 
 
+Then we calculate the mean absolute error, which turns out to be 0.3, this looks moderately decent.
+
+
+
+
+The following plot gives us the error distribution in terms of Z-score of the volume:
+
+
+
+According to the error Distribution plot, the error distribution do have fat tail in the negative direction. And Z = Z_pred - Z_true = -4 does occur for few data points' predictions. I think this corresponds to Z_true = Z_pred + 4, which is underestimated Volume traded.
+
+Error of 4 standard deviation is absolutely a phenomena. This corresponds to severely under-estimated volume traded which corresponds to black swan events (event that is totally unexpected) but statistically black swan events happens more often than expected.
+
+
+
 

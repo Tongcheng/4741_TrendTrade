@@ -266,7 +266,11 @@ Within some subset of data points (Left) and all datapoints (Right), the regress
 
 One observation for quantile regression and both the scatter plot with small subset of datapoints and the scatter plot with big subset of datapoints is, even though the top quantiles look deviated from the perspective of relatively small subset of scatter plots, it does make sense in the case of bigger set of datapoints. In other words, top quantiles is a reasonable regression given enough data.
 
+# Step 9: Linear Regression for each individual stocks:
 
+Another natural idea to utilize the power of Google Trend is to build models for every individual stock, and only pick models that work relatively well. 
+
+# Step 10: Alpha Generation and Backtesting
 
 
 

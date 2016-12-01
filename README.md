@@ -270,6 +270,14 @@ One observation for quantile regression and both the scatter plot with small sub
 
 Another natural idea to utilize the power of Google Trend is to build models for every individual stock, and only pick models that work relatively well. 
 
+In this case, we will care Volume, (Max - Min) Daily Price and (Close - Open) Daily Price.
+
+After doing 3 regressions on all 500 stocks, we have the following error distribution plot:
+
+
+
+And we shall pick the stocks that will really work well for our models.
+
 # Step 10: Alpha Generation and Backtesting
 
 

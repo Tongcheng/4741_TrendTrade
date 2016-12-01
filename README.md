@@ -274,11 +274,10 @@ In this case, we will care Volume, (Max - Min) Daily Price and (Close - Open) Da
 
 After doing 3 regressions on all 500 stocks, we have the following error distribution plot:
 
-
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/VolumeErrorDist.png" height="240"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/MaxMinDiffPriceErrorDist.png" height="240"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/CloseOpenPriceErrorDist.png" height="240">
 
 And we shall pick the stocks that will really work well for our models.
 
 # Step 10: Alpha Generation and Backtesting
-
 
 

@@ -212,15 +212,13 @@ With Feature Engineering, this Linear Regression Model tells us the following im
 
 (1): First of all, there is a common bias called future function bias in financial modeling, that is you use the information that can only be accessed in the future to model what you could know currently. Our model is prone to this bias because we use Google Trend of that day. To avoid this bias, we will try to use only information in 1 previous day or more.
 
-(2): To avoid outliers, we could use some estimation techniques that are robust to outliers.
+(2): There is certainly some black swan events that make certain cases very volatile (So much more volume traded). One way to model such events are using quantile regression for top quantiles, modeling such events are meaningful, as they could, in theory, provide us profitable opportunities if we can foresee black-swan events because people are less rational and more error-prone in trading during black-swan (or totally unexpected) events.
 
-(3): There is certainly some black swan events that make certain cases very volatile (So much more volume traded). One way to model such events are using quantile regression for top quantiles, modeling such events are meaningful, as they could, in theory, provide us profitable opportunities if we can foresee black-swan events because people are less rational and more error-prone in trading during black-swan (or totally unexpected) events.
-
-(4): Similar to quantile regression, we could find companies that more the best fit for our approach. That is, for every company, we evaluate the effectiveness of our model, and we only apply the model to the most effective set of companies.
+(3): Similar to quantile regression, we could find companies that more the best fit for our approach. That is, for every company, we evaluate the effectiveness of our model, and we only apply the model to the most effective set of companies.
 
 This corresponds to the real world case where our alpha-generating method has is conditional on the companies selected.
 
-#Step 7: Future-Bias Free Linear Regression.
+# Step 7: Future-Bias Free Linear Regression.
 
 Doing the same thing for Volume using Z-score of Google Trend 3 days before, 2 days before and 1 day before, we have a Linear Regression for Z-score without the bias of looking into future. 
 
@@ -230,14 +228,16 @@ The weight of regressions is: weight for Google Trend Z-score 3 days before is 0
 
 The plot of scattered data points and regressed line is the following, the x-axis is only the Google Trend Z-score 1 day before while the predicted y consider all 3 days Google Trend information:
 
-
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/FB_Free_LineScatter.png" height="240">
 
 The plot for regression line is the following:
 
-
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/FB_Free_Line.png" height="240">
 
 The error distribution is the following:
 
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/FB_Free_errorHist.png" height="240">
 
+# Step 8: Quantile Regression
 
 

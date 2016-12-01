@@ -166,7 +166,7 @@ Qualitatively the following holds: Google Trend of a stock's abbreviation, as a 
 
 But this does not necessarily mean this qualitative statement can be easily converted to a quantitative statement. Consider the following 2 examples: 
 
-Example 1: ABC, which stands for AmerisourceBergen Corp, a healthcare company, can also refer to English Alphabet in general. And when people are typing ABC, most of the cases are they are referring to the English Alphabet, therefore the Google Trend for ABC have a very small signal to noise ratio. 
+Example 1: ABC, which stands for AmerisourceBergen Corp, a healthcare company, can also refer to English Alphabet in general (i.e. This 6 year old boy is just learning his ABCs). And when people are typing ABC, most of the cases are they are referring to the English Alphabet, therefore the Google Trend for ABC have a very small signal to noise ratio. 
 
 Example 2: AAPL, which stands for Apple Inc, is not naturally a word. And at least as far as I know, AAPL does not have any connotations other than referring to the company Apple. Therefore the Google Trend for AAPL have a large signal to noise ratio.
 
@@ -192,7 +192,7 @@ Calculated over the entire dataset we have the weight vector for Y as Volume tra
 
 The above plots are made using 1000 data points drawn randomly from the dataset.
 
-Then we calculate the mean absolute error, which turns out to be 0.3, this looks moderately decent.
+Then we calculate the mean absolute error, which turns out to be 0.314, this looks moderately decent.
 
 The scatter plot for the entire dataset looks like following:
 
@@ -206,16 +206,38 @@ According to the error Distribution plot, the error distribution do have fat tai
 
 Error of 4 standard deviation is absolutely a phenomena. This corresponds to severely under-estimated volume traded which corresponds to black swan events (event that is totally unexpected, originally from the scenario when you suppose a group of swans in the lake are all white swans, until you see a black swan, which changes your previous hypothesis) but statistically black swan events happens more often than expected.
 
-On the other hand, the mode of the error distribution is in Z = +0.314, this verifies what we already know about the ordinary linear regression use maximum likelihood estimation, which is sensitive to outliers.
+On the other hand, the mode of the error distribution is in Z = +0.3, this verifies what we already know about the ordinary linear regression use maximum likelihood estimation, which is sensitive to outliers.
 
 With Feature Engineering, this Linear Regression Model tells us the following improvements:
 
 (1): First of all, there is a common bias called future function bias in financial modeling, that is you use the information that can only be accessed in the future to model what you could know currently. Our model is prone to this bias because we use Google Trend of that day. To avoid this bias, we will try to use only information in 1 previous day or more.
 
-(2): There is certainly some black swan events that make certain cases very volatile (So much more volume traded). One way to model such events are using quantile regression for top quantiles, modeling such events are meaningful, as they could, in theory, provide us profitable opportunities if we can foresee black-swan events because people are less rational and more error-prone in trading during black-swan (or totally unexpected) events.
+(2): To avoid outliers, we could use some estimation techniques that are robust to outliers.
 
-(3): Similar to quantile regression, we could find companies that more the best fit for our approach. That is, for every company, we evaluate the effectiveness of our model, and we only apply the model to the most effective set of companies.
+(3): There is certainly some black swan events that make certain cases very volatile (So much more volume traded). One way to model such events are using quantile regression for top quantiles, modeling such events are meaningful, as they could, in theory, provide us profitable opportunities if we can foresee black-swan events because people are less rational and more error-prone in trading during black-swan (or totally unexpected) events.
+
+(4): Similar to quantile regression, we could find companies that more the best fit for our approach. That is, for every company, we evaluate the effectiveness of our model, and we only apply the model to the most effective set of companies.
 
 This corresponds to the real world case where our alpha-generating method has is conditional on the companies selected.
+
+#Step 7: Future-Bias Free Linear Regression.
+
+Doing the same thing for Volume using Z-score of Google Trend 3 days before, 2 days before and 1 day before, we have a Linear Regression for Z-score without the bias of looking into future. 
+
+The mean absolute error of the regression is 0.307, which makes it slightly better than previous result of step 6. (Though I don't think there is a systematic cause behind this.) 
+
+The weight of regressions is: weight for Google Trend Z-score 3 days before is 0.0025, weight for 2 days before is 0.0045, weight for 1 day before is 0.038, intercept is -0.0009.
+
+The plot of scattered data points and regressed line is the following, the x-axis is only the Google Trend Z-score 1 day before while the predicted y consider all 3 days Google Trend information:
+
+
+
+The plot for regression line is the following:
+
+
+
+The error distribution is the following:
+
+
 
 

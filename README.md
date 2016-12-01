@@ -210,7 +210,12 @@ On the other hand, the mode of the error distribution is in Z = +0.3, this verif
 
 With Feature Engineering, this Linear Regression Model tells us the following improvements:
 
-(1): There is certainly some black swan events that make certain cases very volatile (So much more volume traded). One way to model such events are using quantile regression for top quantiles, modeling such events are meaningful, as they could, in theory, provide us profitable opportunities if we can foresee black-swan events because people are less rational and more error-prone in trading during black-swan (or totally unexpected) events.
+(1): First of all, there is a common bias called future function bias in financial modeling, that is you use the information that can only be accessed in the future to model what you could know currently. Our model is prone to this bias because we use Google Trend of that day. To avoid this bias, we will try to use only information in 1 previous day or more.
 
-(2): Similar to quantile regression, we cou
+(2): There is certainly some black swan events that make certain cases very volatile (So much more volume traded). One way to model such events are using quantile regression for top quantiles, modeling such events are meaningful, as they could, in theory, provide us profitable opportunities if we can foresee black-swan events because people are less rational and more error-prone in trading during black-swan (or totally unexpected) events.
+
+(3): Similar to quantile regression, we could find companies that more the best fit for our approach. That is, for every company, we evaluate the effectiveness of our model, and we only apply the model to the most effective set of companies.
+
+This corresponds to the real world case where our alpha-generating method has is conditional on the companies selected.
+
 

@@ -146,6 +146,16 @@ The weights for Linear Regression for Normalized Volume is: coefficient for 2 da
 
 Notice that in the line plot, even though our X axis is only current day's google trend, the corresponding Y is the predicted Y that considers Google Trend 2 days before and Google Trend 1 day before.
 
+Similarly, We build a Normalized Price for Max - Min price, called NormalizedMaxMinRatio = (Max price - Min price)/mean_over3month(Price).
+
+This regression has regression weight -3.47 * 1e-5 for Google Trend 2 days before, weight -7.02*1e-6 for Google Trend 1 day before, weight 4.85*1e-5 for current day's Google Trend and intercept 2.3 * 1e-2.
+
+For Normalized Price for Close - Open price, called NormalizedCloseOpenRatio = (Close price - Open price)/mean_over3month(Price).
+
+This regression has regression weight -2.003 * 1e-6 for Google Trend 2 days before, weight 9.91*1e-7 for Google Trend 1 day before, weight -9.24*1e-7 for current day's Google Trend and intercept 2.77 * 1e-4.
+
+
+
 
 
 

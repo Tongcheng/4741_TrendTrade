@@ -162,6 +162,8 @@ This means simply using Linear Regression is not satisfactory, because it offer 
 
 Next, we define what really should be our objectives and use cases of Google Trend. 
 
+### Feature Engineer: Z-score
+
 Qualitatively the following holds: Google Trend of a stock's abbreviation, as a indicator, varies some amount by each day, and some proportion of the variation is correlated with the stock's volume or price change.
 
 But this does not necessarily mean this qualitative statement can be easily converted to a quantitative statement. Consider the following 2 examples: 
@@ -178,29 +180,23 @@ Similarly, we have similar considerations for Y variables (Volume, (Max - Min) d
 
 We treat the Y values by also using Z-score as feature transformation (remove mean than devide by standard deviation).
 
-As an experimental exploration, let's just focus on Volume traded for now.
+### Feature Engineer: Avoid Future Function Bias
 
-The following plot gives us what the scattered points and line looks like:
+We also want to remove the bias of using future functions. That is using the information that is only available in future at a certain time point. We do this by changing the X vector to: Google Trend Z score {3 days before, 2 days before, 1 day before}.
 
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_Z_ScatterLine.png" height="240">
+For plotting, for each of {Volume prediction, Max - Min daily price prediction, Close - Open daily price prediction}, we have 3 plots, left one is the regression line, where the x-axis is the Google Trend Z score one day before, y-axis is the predicted value given information of 3-dimensional X vector; middle one is regression line with all the data points scattered; right one is the error distribution where X axis is Z_pred - Z_true.
 
-The following plot gives us what the regression line looks like (Notice that the regressed line, even though we only showed the x-axis with ) :
+For volume we have the following plot:
 
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/LR_Z_line.png" height="240">
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LRplots/LR_V_line.png" height="180"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LRplots/LR_V_Scatter.png" height="180"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LRplots/LR_error_V.png" height="180">
 
-Calculated over the entire dataset we have the weight vector for Y as Volume traded: weight = -0.00025 for Z-score of Google Trend two days before, weight = 0.023 for Z-score of Google Trend one day before, weight = 0.0534 for Google Trend of the current day and intercept weight = -0.00038.
+For Max - Min daily price we have the following plot:
 
-The above plots are made using 1000 data points drawn randomly from the dataset.
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LRplots/LR_MM_line.png" height="180"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LRplots/LR_MM_scatter.png" height="180"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LRplots/LR_error_MM.png" height="180">
 
-Then we calculate the mean absolute error, which turns out to be 0.314, this looks moderately decent.
+For Close - Open daily price we have the following plot:
 
-The scatter plot for the entire dataset looks like following:
-
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/Scatter_Z.png" height="240">
-
-The following plot gives us the error distribution in terms of Z-score of the volume:
-
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/error_Distribution_Zscore.png" height="240">
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LRplots/LR_CO_line.png" height="180"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LRplots/LR_CO_scatter.png" height="180"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LRplots/LR_error_CO.png" height="180">
 
 According to the error Distribution plot, the error distribution do have fat tail in the negative direction. And Z = Z_pred - Z_true = -4 does occur for few data points' predictions. I think this corresponds to Z_true = Z_pred + 4, which is underestimated Volume traded.
 

@@ -240,9 +240,9 @@ Another natural idea to utilize the power of Google Trend is to build models for
 
 In this case, we will care Volume, (Max - Min) Daily Price and (Close - Open) Daily Price.
 
-After doing 3 regressions on all 500 stocks, we have the following error distribution plot:
+After doing 3 regressions on all stocks with abbreviation length >=3, we have the following error distribution plot:
 
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/VolumeErrorDist.png" height="240"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/MaxMinDiffPriceErrorDist.png" height="240"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/CloseOpenPriceErrorDist.png" height="240">
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/MultiErr/MultiErr_Volume.png" height="180"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/MultiErr/MultiErr_MM.png" height="180"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/MultiErr/MultiErr_CO.png" height="180">
 
 And we shall pick the stocks that will really work well for our models.
 

@@ -232,7 +232,7 @@ The Close-Open Daily price Quantile is follows:
 
 <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/Qplots/Q_CO_Line.png" height="240"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/Qplots/Q_CO_99_Line.png" height="240">
 
-One observation for quantile regression and both the scatter plot with small subset of datapoints and the scatter plot with big subset of datapoints is, even though the top quantiles look deviated from the perspective of relatively small subset of scatter plots, it does make sense in the case of bigger set of datapoints. In other words, top quantiles is a reasonable regression given enough data.
+For all the 6 plots, the higher up a line is, the higher up percentile it belongs to, notice the even though x-axis is only the Google Trend Z-score one day before, Y-axis (predicted Y) use all information available in X vector's 3 coordinates. 
 
 # Step 8: Linear Regression for each individual stocks:
 

@@ -198,43 +198,23 @@ For Close - Open daily price we have the following plot:
 
 <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LRplots/LR_CO_line.png" height="180"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LRplots/LR_CO_scatter.png" height="180"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LRplots/LR_error_CO.png" height="180">
 
-According to the error Distribution plot, the error distribution do have fat tail in the negative direction. And Z = Z_pred - Z_true = -4 does occur for few data points' predictions. I think this corresponds to Z_true = Z_pred + 4, which is underestimated Volume traded.
+According to the error Distribution plot, the error distribution do have fat tail in the negative direction. And Z = Z_pred - Z_true = -7 does occur for few data points' predictions. I think this corresponds to Z_true = Z_pred + 7, which is underestimated Volume traded.
 
-Error of 4 standard deviation is absolutely a phenomena. This corresponds to severely under-estimated volume traded which corresponds to black swan events (event that is totally unexpected, originally from the scenario when you suppose a group of swans in the lake are all white swans, until you see a black swan, which changes your previous hypothesis) but statistically black swan events happens more often than expected.
+Error of 7 standard deviation is absolutely a phenomena. This corresponds to severely under-estimated volume traded which corresponds to black swan events (event that is totally unexpected, originally from the scenario when you suppose a group of swans in the lake are all white swans, until you see a black swan, which changes your previous hypothesis) but statistically black swan events happens more often than expected.
 
-On the other hand, the mode of the error distribution is in Z = +0.3, this verifies what we already know about the ordinary linear regression use maximum likelihood estimation, which is sensitive to outliers.
+On the other hand, the mean absolute error is in 0.68 for Volume, 0.73 for Max-Min daily price, 0.78 for Close-Open daily price, this verifies what we already know about the ordinary linear regression use maximum likelihood estimation, which is sensitive to outliers.
+
+But by Law of Large Numbers, as long as we predict correctly consistently, we will make money (if we disregard complication such as transaction cost).
 
 With Feature Engineering, this Linear Regression Model tells us the following improvements:
 
-(1): First of all, there is a common bias called future function bias in financial modeling, that is you use the information that can only be accessed in the future to model what you could know currently. Our model is prone to this bias because we use Google Trend of that day. To avoid this bias, we will try to use only information in 1 previous day or more.
+(1): There is certainly some black swan events that make certain cases very volatile (So much more volume traded). One way to model such events are using quantile regression for top quantiles, modeling such events are meaningful, as they could, in theory, provide us profitable opportunities if we can foresee black-swan events because people are less rational and more error-prone in trading during black-swan (or totally unexpected) events.
 
-(2): There is certainly some black swan events that make certain cases very volatile (So much more volume traded). One way to model such events are using quantile regression for top quantiles, modeling such events are meaningful, as they could, in theory, provide us profitable opportunities if we can foresee black-swan events because people are less rational and more error-prone in trading during black-swan (or totally unexpected) events.
-
-(3): Similar to quantile regression, we could find companies that more the best fit for our approach. That is, for every company, we evaluate the effectiveness of our model, and we only apply the model to the most effective set of companies.
+(2): Similar to quantile regression, we could find companies that more the best fit for our approach. That is, for every company, we evaluate the effectiveness of our model, and we only apply the model to the most effective set of companies.
 
 This corresponds to the real world case where our alpha-generating method has is conditional on the companies selected.
 
-# Step 7: Future-Bias Free Linear Regression.
-
-Doing the same thing for Volume using Z-score of Google Trend 3 days before, 2 days before and 1 day before, we have a Linear Regression for Z-score without the bias of looking into future. 
-
-The mean absolute error of the regression is 0.307, which makes it slightly better than previous result of step 6. (Though I don't think there is a systematic cause behind this.) 
-
-The weight of regressions is: weight for Google Trend Z-score 3 days before is 0.0025, weight for 2 days before is 0.0045, weight for 1 day before is 0.038, intercept is -0.0009.
-
-The plot of scattered data points and regressed line is the following, the x-axis is only the Google Trend Z-score 1 day before while the predicted y consider all 3 days Google Trend information:
-
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/FB_Free_LineScatter.png" height="240">
-
-The plot for regression line is the following:
-
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/FB_Free_Line.png" height="240">
-
-The error distribution is the following:
-
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/FB_Free_errorHist.png" height="240">
-
-# Step 8: Quantile Regression
+# Step 7: Quantile Regression
 
 Then I try Quantile Regression to model the top Volume changes, quantile regression models the response variable (y) for a given quantile (q) conditioned on variable x. In my case, variable x is vector with 3 elements, namely: Z-score of Google Trend 3 days before, Z-score Google Trend 2 days before and Z-score Google Trend 1 day before. The Y variable is Z-score of the volume traded. 
 
@@ -262,7 +242,7 @@ Within some subset of data points (Left) and all datapoints (Right), the regress
 
 One observation for quantile regression and both the scatter plot with small subset of datapoints and the scatter plot with big subset of datapoints is, even though the top quantiles look deviated from the perspective of relatively small subset of scatter plots, it does make sense in the case of bigger set of datapoints. In other words, top quantiles is a reasonable regression given enough data.
 
-# Step 9: Linear Regression for each individual stocks:
+# Step 8: Linear Regression for each individual stocks:
 
 Another natural idea to utilize the power of Google Trend is to build models for every individual stock, and only pick models that work relatively well. 
 
@@ -274,5 +254,5 @@ After doing 3 regressions on all 500 stocks, we have the following error distrib
 
 And we shall pick the stocks that will really work well for our models.
 
-# Step 10: Alpha Generation and Backtesting
+# Step 9: Alpha Generation and Backtesting
 

@@ -162,7 +162,7 @@ This means simply using Linear Regression is not satisfactory, because it offer 
 
 Next, we define what really should be our objectives and use cases of Google Trend. 
 
-### Feature Engineer: Z-score
+### Feature Engineering: Z-score
 
 Qualitatively the following holds: Google Trend of a stock's abbreviation, as a indicator, varies some amount by each day, and some proportion of the variation is correlated with the stock's volume or price change.
 
@@ -180,7 +180,7 @@ Similarly, we have similar considerations for Y variables (Volume, (Max - Min) d
 
 We treat the Y values by also using Z-score as feature transformation (remove mean than devide by standard deviation).
 
-### Feature Engineer: Avoid Future Function Bias
+### Feature Engineering: Avoid Future Function Bias
 
 We also want to remove the bias of using future functions. That is using the information that is only available in future at a certain time point. We do this by changing the X vector to: Google Trend Z score {3 days before, 2 days before, 1 day before}.
 
@@ -216,29 +216,21 @@ This corresponds to the real world case where our alpha-generating method has is
 
 # Step 7: Quantile Regression
 
-Then I try Quantile Regression to model the top Volume changes, quantile regression models the response variable (y) for a given quantile (q) conditioned on variable x. In my case, variable x is vector with 3 elements, namely: Z-score of Google Trend 3 days before, Z-score Google Trend 2 days before and Z-score Google Trend 1 day before. The Y variable is Z-score of the volume traded. 
+Then I try Quantile Regression to model the top Volume changes, quantile regression models the response variable (y) for a given quantile (q) conditioned on variable x. In my case, variable x is vector with 3 elements, namely: Z-score of Google Trend 3 days before, Z-score Google Trend 2 days before and Z-score Google Trend 1 day before. The Y variable is Z-score of the volume traded.
 
-The 10 quantile lines for quantile = {50,55,60,...,95} is plotted as follows:
+The following plot on the left is Quantile Regression for corresponding quantities {Volume, Max - Min price, Close - Open price} for quantile = [0.5,0.55,0.6,...,0.95], while the plot on the right is Quantile Regression for quantile = [0.9,0.91,...,0.99].
 
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/50_95_5_QuantileLines.png" height="240">
+The Volume Quantile plot is follows:
 
-The picture is the ten regression lines, the higher up the line is, the higher up percentile it represents. For ease of visualization, the x-axis only included the 1 day before Google Trend Z-score. Though the predicted y for certain percentile included all 3 days' information.
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/Qplots/Q_V_Line.png" height="240"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/Qplots/Q_V_99_Line.png" height="240">
 
-The regression line within a subset of datapoints is the following:
+The Max-Min Daily price Quantile is follows:
 
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/50_95_5_QuantileScatter.png" height="240">
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/Qplots/Q_MM_Line.png" height="240"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/Qplots/Q_MM_99_Line.png" height="240">
 
-The regression line within all datapoints is the following:
+The Close-Open Daily price Quantile is follows:
 
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/50_95_5_bigScatter.png" height="240">
-
-If we plot the quantile regression for quantile = {0.9,0.91,0.92,...,0.99}, the ten regression line is the following:
-
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/90_99_1_Line.png" height="240">
-
-Within some subset of data points (Left) and all datapoints (Right), the regression line will be the following:
-
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/90_99_1_Scatter.png" height="240"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/LongNameS%26P500/90_99_1_BigScatter.png" height="240">
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/Qplots/Q_CO_Line.png" height="240"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/Qplots/Q_CO_99_Line.png" height="240">
 
 One observation for quantile regression and both the scatter plot with small subset of datapoints and the scatter plot with big subset of datapoints is, even though the top quantiles look deviated from the perspective of relatively small subset of scatter plots, it does make sense in the case of bigger set of datapoints. In other words, top quantiles is a reasonable regression given enough data.
 

@@ -242,7 +242,7 @@ In this case, we will care Volume, (Max - Min) Daily Price and (Close - Open) Da
 
 After doing 3 regressions on all stocks with abbreviation length >=3, we have the following error distribution plot:
 
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/MultiErr2/MultiErr_Volume.png" height="180"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/MultiErr2/MultiErr_MM.png" height="180"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/MultiErr2/MultiErr_CO.png" height="180">
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/MultiErr2/MultiErr2_V.png" height="180"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/MultiErr2/MultiErr2_MM.png" height="180"><img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/MultiErr2/MultiErr2_CO.png" height="180">
 
 And we shall pick the stocks that will really work well for our models.
 

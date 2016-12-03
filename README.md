@@ -248,7 +248,13 @@ And we shall pick the stocks that will really work well for our models.
 
 # Step 9: Alpha Generation and Backtesting
 
-The intuition of my strategy is that, based on regression results, buy or sell some quantity of the stock proportional to prediction value for (close price - open price).
+The intuition of my strategy is that, based on regression results, buy or sell some quantity of the stock proportional to prediction value for (close - open) daily price.
+
+Then I build a backtest framework, I use first 2 years' (2010 and 2011) data to train the regression weight W_CO for each stock. 
+
+Then use these trained weights, I test the results on the third year's (2012) to see the trajectory of return within 2012.
+
+
 
 # Step 10: Optimal Allocation and Portfolio Optimization
 

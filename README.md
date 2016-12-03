@@ -73,7 +73,7 @@ First attempt we try is using all 500 S&P stock symbols, with two perspectives:
 ### Currently the criterion we will examine is for all 3-month windows combined, we look at the histogram of r (the correlation coefficient).
 
 ### Examine over different time averages of Google Trend:
-### 1-day vs. 3-day vs. 7-day Volatility Correlation: with r1 = 0.097, r3 = 0.101, r7 = 0.073.
+### 1-day vs. 3-day vs. 7-day Volume Correlation: with r1 = 0.097, r3 = 0.101, r7 = 0.073.
 <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/1dayTrend_Volume_Corr.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/3dayArithmeticTrend_volume_corr.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/7dayArithmeticTrend_Volume_Corr.png" height="180">
 
 Let's first look at 1-day Volume Correlation, notice that even though the correlation information seems low, it is actually very high based on stock markets being very noisy. And this plot has some portion with almost 1 correlation which is interesting.

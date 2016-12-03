@@ -270,7 +270,13 @@ The return indicator measures how much money my strategy returns, but one disadv
 
 The Sharpe ratio is defined as Sharpe Ratio:=(return - risk_free_return)/(standar_deviation_of_returns). Usually the risk_free_return is assumed to be interest rate, in my case the risk_free_return is assumed to be 0 for simplicity. Sharpe ratio measures the ratio of return divided by risk. Sharpe ratio is the how good a strategy can be if it can be given leverage (means how good a strategy can be if it is given enough money scalability by borrowing money.)
 
+The additional assumptions my backtesting framework makes are:
 
+(1) In each day, we start with an empty portfolio, and end with a empty portfolio. We buy and sell stocks according to our alpha signal's direction and amount within the day to ensure that the portfolio is empty by the end of the day. This implicitly assumes there is enough liquidity in the market.
+
+(2) The backtesting framework also assumes that we can short stock without any constraint. In real world, this assumption does not hold because there are usually short margin requirements for each account, that basically means you need to have enough money in your account to do the short. Here we remove this constraint to make backtesting easier.
+
+(3) 
 
 # Step 10: Optimal Allocation and Portfolio Optimization
 

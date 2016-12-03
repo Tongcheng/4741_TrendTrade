@@ -278,6 +278,8 @@ The additional assumptions my backtesting framework makes are:
 
 (3) For the backtesting of each individual stock, I suppose it starts with 1000 dollars, and the amount of money is changed by each day. The indicator Sharpe ratio is invariant on the initial amount of money as the calculation of Sharpe ratio is divided by standard deviation of return.
 
+The procedure of backtesting is as follows: For each individual stock, do regression using first 2 years to get the weights, this is the training step; Then to test, I loop over every trading day in the 3rd year, the quantity traded (long/short) is determined by alpha signal, then we use the (Close - Open) Daily Price to multiply the quantity traded to determine win/loss amount of the day.
+
 The following is the Sharpe ratio distribution of all the stocks in my scope:
 
 <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/AlphaBacktest/SharpeRatioDistribution.png" height="360">

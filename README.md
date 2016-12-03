@@ -310,5 +310,13 @@ After this Portofolio Optimization procedure, the PnL curve (Profit and Loss) lo
 
 <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/PnLCurve/PnLCurve.png" height="360">
 
+In theory, this could be further optimized by different weights of individual stock strategies. For example, using the Classical Markowitz Portfolio Theory to find an optimal combination of individual strategies by tradeing off between risk and return.
+
+# Summary:
+
+In summary, I have done a full pipeline of a strategy generation, first collecting the big messy data from Google Trend, and price volume information of S&P 500 stocks, then analyzing the properties of two dataset's correlation: using histogram of correlation, linear regression, feature engineering and quantile regression. Then I developed a backtesting framework and one sample alpha signal to test how good is our fit.  
+
+
+
 
 

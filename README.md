@@ -300,19 +300,29 @@ Each individual strategy for an individual stock is allocated a initial amount o
 
 The Kelly Criterion is a portfolio/risk management technique to maximize the long-run geometric growth rate. It has the following parameters:
 
-(1): p: The probability of winning a bet.
+(1): p: The probability of winning a bet. In our implementation, p is estimated by the 2 years' winning frequency.
 
-(2): b: The odds ratio. (For each dollar you bet, the dollar amount you will get if you win.)
+(2): b: The odds ratio. (For each dollar you bet, the dollar amount you will get if you win.) In our implementation, b is estimated by Predicted_CO ratio. 
 
 Then Kelly Criterion specifies that for each time, you should bet a fraction f of your current money, where f = (p*(b+1)-1)/b.
 
-Then for each individual stock, we allocate 1,000 dollars hypothetically.
+Then for each individual stock, we allocate 1,000 dollars hypothetically, then each time step use Kelly Criterion to decide the dollar amount we want to bet, and using the current price, decide the quantity of stock we want to bet.
 
-After this Portofolio Optimization procedure, the PnL curve (Profit and Loss) looks like the following, with Sharpe ratio = 3.19. Initially, we have 112,000 dollars, after 200 days, we have 136,517 dollars. So the return is 21.89%
+After this Portofolio Optimization procedure, the PnL curve (Profit and Loss) looks like the following, with Sharpe ratio = 3.19. Initially, we have 112,000 dollars, after 200 days, we have 136,517 dollars. So the return is 21.89%. 
 
 <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/PnLCurve/PnLCurve.png" height="360">
 
-In theory, this could be further optimized by different weights of individual stock strategies. For example, using the Classical Markowitz Portfolio Theory to find an optimal combination of individual strategies by tradeing off between risk and return.
+This is a very good result. 
+
+But to be realistic and pessimistic, we have to look at several potential biases:
+
+(1): In calculating Z-scores, we use the 3-month mean and standard deviation, which is only known in future. This might turn out to be a downside in practice. For example, estimation of mean and standard deviation might be hard or nonstationary.
+
+(2): Picking the Stocks that have more than 2 sharpe ratio might be not accurate in practice, there might be sudden changes that make the distribution of stocks no longer valid in longer run.
+
+(3): There might be (and will be almost surely) execution downside not modeled in the backtesting. For example, we may not get the good price or liquidity as in backtesting.
+
+However, to be optimistic, in theory, this could be further optimized by different weights of individual stock strategies. For example, using the Classical Markowitz Portfolio Theory to find an optimal combination of individual strategies by tradeing off between risk and return.
 
 # Summary:
 

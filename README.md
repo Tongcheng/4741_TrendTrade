@@ -72,34 +72,23 @@ First attempt we try is using all 500 S&P stock symbols, with two perspectives:
 
 ### Currently the criterion we will examine is for all 3-month windows combined, we look at the histogram of r (the correlation coefficient).
 
-##### The histogram of r using 1 day Google Trend information with volume traded, with mean correlation = 0.097:
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/1dayTrend_Volume_Corr.png" height="240">
-
-From this plot, even though the correlation information seems low, it is actually very high based on stock markets being very noisy. And this plot has some portion with almost 1 correlation which is interesting.
-
-##### The histogram of r using 1 day Google Trend information with (max price of day - min price of day), with mean correlation = 0.0594.
-
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/1dayTrend_priceMaxMinDiff.png" height="240">
-
-There is certainly a positive correlation between daily price range (can be think of close to volatility) and Google Trends which makes sense: When some big news happens, volatility rises, and on the other hand, people tend to search for stock symbol, which cause Google Trend to rise.
-
-##### The histogram of r using 1 day Google Trend information with (close price of day - open price of day) with mean correlation -0.00513.
-
-<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/1dayTrend_priceCloseOpenDiff.png" height="240">
-
-From this plot, we notice that change of price of the day is negatively correlated with Google Trend of the day, this can be explained by volatility is asymmetrical in terms of direction. That is, it is more volatile for price to decrease (when stock price plummeted overnight) but not as volatile for price to increase (when price increase steadily though slowly over 3 months due to Good Expectations).
-
-### Then we examine over different time averages of Google Trend:
+### Examine over different time averages of Google Trend:
 ### 1-day vs. 3-day vs. 7-day Volatility Correlation: with r1 = 0.097, r3 = 0.101, r7 = 0.073.
 <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/1dayTrend_Volume_Corr.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/3dayArithmeticTrend_volume_corr.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/7dayArithmeticTrend_Volume_Corr.png" height="180">
+
+Let's first look at 1-day Volume Correlation, notice that even though the correlation information seems low, it is actually very high based on stock markets being very noisy. And this plot has some portion with almost 1 correlation which is interesting.
 
 We can see that Correlation of Trend with Volatility is less spiked as time range considered is longer. This is because information is dispersed. And it also seems 3-day average is most predictive, which can be think of either (1) appropriate time needed (eigen time) for information to propagate to Google Trend or (2) Saturday and Sunday's cumulative effect on Monday.
 
 ### 1-day vs. 3-day vs. 7-day (Max Daily Price - Min Daily Price) Correlation: with r1 = 0.0594, r3 = 0.056, r7 = 0.037.
 <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/1dayTrend_priceMaxMinDiff.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/3dayArithmeticTrend_priceMaxMinDiff_corr.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/7dayArithmetic_MaxMinPrice_Corr.png" height="180">
 
+There is certainly a positive correlation between daily price range (can be think of close to volatility) and Google Trends which makes sense: When some big news happens, volatility rises, and price range rises, and on the other hand, people tend to search for stock symbol, which cause Google Trend to rise.
+
 ### 1-day vs. 3-day vs. 7-day (Daily Close Price - Daily Open Price) Correlation: with r1 = -0.00513, r3 = -0.0055, r7 = -0.0067
 <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/1dayTrend_priceCloseOpenDiff.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/3dayTrend_CloseOpenDiff_corr.png" height="180"> <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/All500S%26Pplots/7dayArithmetic_CloseOpenPriceDiff_Corr.png" height="180">
+
+From this 1-day plot, we notice that change of price of the day is negatively correlated with Google Trend of the day, this can be explained by volatility is asymmetrical in terms of direction. That is, it is more volatile for price to decrease (when stock price plummeted overnight) but not as volatile for price to increase (when price increase steadily though slowly over 3 months due to Good Expectations).
 
 # Step 4: Correlation Modeling on a More Informative Subset of Stock Symbols
 

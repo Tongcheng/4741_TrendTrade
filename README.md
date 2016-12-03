@@ -7,12 +7,9 @@ In this project, we want to identify relations between Google Trend data and Sto
 Specifically, we are interested in the following problems:
 
 Given Daily prices (including: open price, close price, daily high price, daily low price) and volume of 500 S&P500 stocks.
-We want to find how information of Google Trends contribute to the formation of prices in the following ways:
-
-### (1) How does the Google Trend of stock abbreviated symbols (for example: AAPL for apple stock) indicate price change of the day, max price difference of the day and volume of the day.
+We want to find how information of Google Trends contribute to the formation of prices, in particular: How does the Google Trend of stock abbreviated symbols (for example: AAPL for apple stock) indicate price change of the day, max price difference of the day and volume of the day.
 
 This question is interesting because when Google Trend of a stock in spiked, it could mean some major events happened to the company, for example, Apple launched its new products.
-
 
 # Step 1: Data Gathering
 

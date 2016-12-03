@@ -290,11 +290,25 @@ Now we have some basic strategy that works, I will consider something to optimiz
 
 # Step 10: Optimal Allocation and Portfolio Optimization
 
-First we pick a subset of stocks that have high performance in terms of sharpe ratio. Specifically, I pick all stock symbols that have Sharpe Ratio > 2. 
+First we pick a subset of stocks that have high performance in terms of sharpe ratio. Specifically, I pick all stock symbols that have Sharpe Ratio > 2. We also require the filtered stock have more than 200 days traded in Year 2012. (Usually, there are around 252 trade days in each year, so 200 trade days is a very relaxed constraint.) There are 112 stocks that satisfy this constraint.
 
 Then I combine the individual strategies to make it a big strategy and test its performance.
 
-Each individual strategy for an individual stock is allocated a initial amount of money, and for each time step (day), the strategy long or short a certain amount of stock according to its current amount of money and strength of Alpha signal.
+Each individual strategy for an individual stock is allocated a initial amount of money, and for each time step (day), the strategy long or short a certain amount of stock according to its current amount of money and strength of Alpha signal. For each individual stock/strategy, we use Kelly Criterion as the way to devide how much to long/short. 
+
+The Kelly Criterion is a portfolio/risk management technique to maximize the long-run geometric growth rate. It has the following parameters:
+
+(1): p: The probability of winning a bet.
+
+(2): b: The odds ratio. (For each dollar you bet, the dollar amount you will get if you win.)
+
+Then Kelly Criterion specifies that for each time, you should bet a fraction f of your current money, where f = (p*(b+1)-1)/b.
+
+Then for each individual stock, we allocate 1,000 dollars hypothetically.
+
+After this Portofolio Optimization procedure, the PnL curve (Profit and Loss) looks like the following, with Sharpe ratio = 3.19. Initially, we have 112,000 dollars, after 200 days, we have 136,517 dollars. So the return is 21.89%
+
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/PnLCurve/PnLCurve.png" height="360">
 
 
 

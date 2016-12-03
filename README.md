@@ -286,6 +286,8 @@ I have mean Sharpe ratio of 0.33, which is not too bad.
 
 I didn't consider the return yet because in the next part we will pick the stocks that are a good fit to boost our return and Sharpe ratio while minimizing risk.
 
+Now we have some basic strategy that works, I will consider something to optimize the strategy.
+
 # Step 10: Optimal Allocation and Portfolio Optimization
 
 First we pick a subset of stocks that have high performance in terms of sharpe ratio. Specifically, I pick all stock symbols that have Sharpe Ratio > 2. 

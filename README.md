@@ -276,7 +276,15 @@ The additional assumptions my backtesting framework makes are:
 
 (2) The backtesting framework also assumes that we can short stock without any constraint. In real world, this assumption does not hold because there are usually short margin requirements for each account, that basically means you need to have enough money in your account to do the short. Here we remove this constraint to make backtesting easier.
 
-(3) 
+(3) For the backtesting of each individual stock, I suppose it starts with 1000 dollars, and the amount of money is changed by each day. The indicator Sharpe ratio is invariant on the initial amount of money as the calculation of Sharpe ratio is divided by standard deviation of return.
+
+The following is the Sharpe ratio distribution of all the stocks in my scope:
+
+<img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/AlphaBacktest/SharpeRatioDistribution.png" height="360">
+
+I have mean Sharpe ratio of 0.33, which is not too bad.
+
+I didn't consider the return yet because in the next part we will pick the stocks that are a good fit to boost our return and Sharpe ratio while minimizing risk.
 
 # Step 10: Optimal Allocation and Portfolio Optimization
 

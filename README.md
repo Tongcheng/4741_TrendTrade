@@ -248,13 +248,19 @@ And we shall pick the stocks that will really work well for our models.
 
 # Step 9: Alpha Generation and Backtesting
 
-The intuition of my strategy is that, based on regression results, buy or sell some quantity of the stock proportional to prediction value for (close - open) daily price.
+The word Alpha in the title of step has its root in CAPM (Capital Asset Pricing Model), defined as the excess return over benchmark, and Alpha is uncorrelated with market risk. Intuitively, it means how well the fund/strategy is performing.
 
-Then I build a backtest framework, I use first 2 years' (2010 and 2011) data to train the regression weight W_CO for each stock. 
+In a broader context, Alpha means the captured signal that could systematically generate profit for the strategy. And this is the meaning here for Alpha Generation. 
 
-Then use these trained weights, I test the results on the third year's (2012) to see the trajectory of return within 2012.
+The word Backtesting in my title means the procedure for which quants test how well a strategy is performing, and also analyze the performance characteristics of a strategy. Some common performance characteristics include: return, sharpe ratio, sortino ratio, maximum downturn etc. These characteristics measure how well is the strategy is in return and risk.
 
+However, in real world, backtesting does not mean everything. Because there are usually a lot of other factors in the real world that makes practice (real world money making) harder than backtesting. One example is market may not have enough liquidity when you are trying to buy. Another example is execution may have more latency than required which makes alpha-generating ideas not realizable. One particular case where execution's negative impact on strategy is called slippage, which means when you detect the price you want to trade, you trade at a less favorable price because you are too slow. The importance of these cases about the importance of execution (trading system) are especially important in cases such as high frequency market making.
 
+The intuition of my signal is that, based on regression results, buy or sell some quantity of the stock proportional to the predicted value of (close - open) daily price.
+
+Then I build a backtest framework, I use first 2 years' (2010 and 2011) data to train the regression weight W_CO for each stock. Then use these trained weights, I test the results on the third year's (2012) to see the trajectory of return within 2012.
+
+My backtest framework serves as the test for how well my strategy performs, the backtesting 
 
 # Step 10: Optimal Allocation and Portfolio Optimization
 

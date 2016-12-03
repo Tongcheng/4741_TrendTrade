@@ -248,9 +248,13 @@ And we shall pick the stocks that will really work well for our models.
 
 # Step 9: Alpha Generation and Backtesting
 
+### Alpha:
+
 The word Alpha in the title of step has its root in CAPM (Capital Asset Pricing Model), defined as the excess return over benchmark, and Alpha is uncorrelated with market risk. Intuitively, it means how well the fund/strategy is performing.
 
 In a broader context, Alpha means the captured signal that could systematically generate profit for the strategy. And this is the meaning here for Alpha Generation. 
+
+### Backtesting:
 
 The word Backtesting in my title means the procedure for which quants test how well a strategy is performing, and also analyze the performance characteristics of a strategy. Some common performance characteristics include: return, sharpe ratio, sortino ratio, maximum downturn etc. These characteristics measure how well is the strategy is in return and risk.
 

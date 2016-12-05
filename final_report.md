@@ -9,11 +9,11 @@ In this project, we want to identify relations between Google Trend data and S&P
 
 Specifically, we are interested in: 
 
-(1) How does Google Trends Information of a abbreviation of a stock symbol (for example: AAPL for apple stock) contribute to the formation of prices and volumes? In this report, we will explore this relation with histogram of correlations and linear regression with feature engineering.
+#### (1) How does Google Trends Information of a abbreviation of a stock symbol (for example: AAPL for apple stock) contribute to the formation of prices and volumes? In this report, we will explore this relation with histogram of correlations and linear regression with feature engineering.
 
-(2) How does the Blackswan events of a certain stock with extremely abnormal Volume and Price change correlated with Google Trend: Is it possible to find some definitive pattern in the Google Trend data before black swan event happens? If we can detect Blackswan events before it happened, then as investors, we can avoid risks associated with Blackswan events. In this report, we will explore the predictive modeling of Google Trend with Quantile Regression with feature engineering.
+#### (2) How does the Blackswan events of a certain stock with extremely abnormal Volume and Price change correlated with Google Trend: Is it possible to find some definitive pattern in the Google Trend data before black swan event happens? If we can detect Blackswan events before it happened, then as investors, we can avoid risks associated with Blackswan events. In this report, we will explore the predictive modeling of Google Trend with Quantile Regression with feature engineering.
 
-(3) If the Google Trend information does have predictive power of prices, can we build certain profitable strategies (at least in theory) and backtest it? We will develop certain sample strategies, by no means to expect it to profit in reality, but do expect the optimizatized version of it to profit in theory(in backtesting). And I will use an optimization called Kelly Criterion which maxmize long-term geometric growth of a betting strategy.
+#### (3) If the Google Trend information does have predictive power of prices, can we build certain profitable strategies (at least in theory) and backtest it? We will develop certain sample strategies, by no means to expect it to profit in reality, but do expect the optimizatized version of it to profit in theory(in backtesting). And I will use an optimization called Kelly Criterion which maxmize long-term geometric growth of a betting strategy.
 
 Intuitively, google trend should carry information because: for example, before Apple launch a new product, people will be more likely to search "Apple" in Google, causing the corresponding Google Trend Index to increase. 
 

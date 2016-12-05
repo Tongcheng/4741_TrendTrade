@@ -57,28 +57,18 @@ So Google returns daily granularity for Google Trend for date range queries less
 
 For CSV files downloaded, we want to verify it is correct before using it since there exist possibility of typing the wrong query before download. First, we merge the CSV file of GoogleTrends to the CSV of prices and volume. So we create a csv file for every 3 months between Year [2010,2012]. As a cleanup, we throw away merge CSV files which have too few trade days or too much trade days, because that would mean something is wrong with it. In particular, we throw away CSV with <= 55 trade days and CSV with >=70 trade days, with the concern that normally there are 21 to 22 trade days per month, and other holidays should not affect every 3 month by more than -8 or +6 days.
 
-### Then we define our problem concretely as follows: For each 3-month time frame, given complete Google Trend data and trade data(only happens on business days, which excludes weekends and holidays), try to model the correlation.
-
-Then we notice the map from Trade entries to Trend entries is a one-to-one but not onto mapping. This is equivalent to saying, for each trade entry, there is a trend entry, but not the other way around.
+### Then we define our problem concretely as follows: For each 3-month time frame, given complete Google Trend data and trade data(only happens on business days, which excludes weekends and holidays), try to build predictive models.
 
 # Step 3: Correlation Modeling on Complete S&P 500 Symbols
 First attempt we try is using all 500 S&P stock symbols, with two perspectives:
 
 ### Perspective I:
 
-(1): Using the current day Google Trend data to model trading information.
-
-(2): Using the past 3-day arithmetic average to model trading information.
-
-(3): Using the past 7-day arithmetic average to model trading information.
+(1)Using the current day Google Trend data to model trading information, (2)Using the past 3-day arithmetic average to model trading information, (3)Using the past 7-day arithmetic average to model trading information.
 
 ### Perspective II:
 
-(1): Try to model Volume traded.
-
-(2): Try to model Max Price Difference (Daily High Price - Daily Low Price) of the day.
-
-(3): Try to model (Close price - Open price) of the day.
+(1)Try to model Volume traded, (2)Try to model Max Price Difference (Daily High Price - Daily Low Price) of the day, (3)Try to model (Close price - Open price) of the day.
 
 ### Currently the criterion we will examine is for all 3-month windows combined, we look at the histogram of r (the correlation coefficient).
 
@@ -121,12 +111,12 @@ We can see that Correlation of Trend with Volatility is less spiked as time rang
 
 ### After this cleanup, our mean correlation is becoming larger in magnitude, which means filter out short name symbols will increase information in Google Trend signal.
 
-# Step 5: Linear Regression (A Failed Attempt) 
+# Step 5: Linear Regression (A First Attempt) 
 First, we try to model the Volume Traded using past 3 days' Google Trend with Linear Regression.
 
 Intuitively, overall Volume should be normalized because large cap stocks will be traded with larger daily volume therefore if we didn't normalize, the prediction will be biased toward large cap stocks. 
 
-Therefore we attempt with the first kind of normalization for Y, which is dividing the original Y value's 3 month average.
+Therefore we try normalization for Y, which is dividing the original Y value's 3 month average.
 
 So for example, the scatter plot of GoogleTrend of the day (X variable) and Normalized Volume Traded:
 
@@ -246,7 +236,7 @@ And we shall pick the stocks that will really work well for our models.
 
 ### Alpha:
 
-The word Alpha in the title of step has its root in CAPM (Capital Asset Pricing Model), defined as the excess return over benchmark, and Alpha is uncorrelated with market risk. Intuitively, it means how well the fund/strategy is performing.
+The word Alpha in the title of step has its root in CAPM (Capital Asset Pricing Model), defined as the excess return over benchmark, and Alpha is the return uncorrelated with market risk. Intuitively, it means how well the fund/strategy is performing.
 
 In a broader context, Alpha means the captured signal that could systematically generate profit for the strategy. And this is the meaning here for Alpha Generation.
 

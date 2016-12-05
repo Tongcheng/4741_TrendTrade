@@ -3,13 +3,23 @@ This is Project for class ORIE 4741 by Tongcheng Li.
 
 # Final Report
 
-In this project, we want to identify relations between Google Trend data and Stock's daily price and volume.
-Specifically, we are interested in the following problems:
+### Abstract:
 
-Given Daily prices (including: open price, close price, daily high price, daily low price) and volume of 500 S&P500 stocks.
-We want to find how information of Google Trends contribute to the formation of prices, in particular: How does the Google Trend of stock abbreviated symbols (for example: AAPL for apple stock) indicate price change of the day, max price difference of the day and volume of the day.
+In this project, we want to identify relations between Google Trend data and S&P500 Stocks' daily price and volume.
 
-This question is interesting because when Google Trend of a stock in spiked, it could mean some major events happened to the company, for example, Apple launched its new products.
+Specifically, we are interested in: 
+
+(1) How does Google Trends Information of a abbreviation of a stock symbol (for example: AAPL for apple stock) contribute to the formation of prices and volumes? 
+
+(2) How does the Blackswan events of a certain stock with extremely abnormal Volume and Price change correlated with Google Trend: Is it possible to find some definitive pattern in the Google Trend data before black swan event happens? If we can detect Blackswan events before it happened, then as investors, we can avoid risks associated with Blackswan events.
+
+(3) If the Google Trend information does have predictive power of prices, can we build certain profitable strategies (at least in theory) and backtest it?
+
+Intuitively, google trend should carry information because: for example, before Apple launch a new product, people will be more likely to search "Apple" in Google, causing the corresponding Google Trend Index to increase. 
+
+Theoretically, this increment of Google Trend Index can be think of information leak from informed traders. For example, certain traders with more information should search for Google to gather information about a certain company because they know something will happen in the near future about the company. In this case, Google Trend Index should be a valid predictor of Volatility in near future. Also, for each individual company, there should be a certain probability p that the " big change" in the near future will be good. This is a company specific information which I will try to model for each company.
+
+
 
 # Step 1: Data Gathering
 

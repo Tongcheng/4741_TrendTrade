@@ -286,15 +286,15 @@ Each individual strategy for an individual stock is allocated a initial amount o
 
 The Kelly Criterion is a portfolio/risk management technique to maximize the long-run geometric growth rate. It has the following parameters:
 
-(1): p: The probability of winning a bet. In our implementation, p is estimated by the 2 years' winning frequency.
+(1): p: The probability of winning a bet. In our implementation, p is estimated by the 2 years' winning frequency = (number of winning trading days/number of all trading days).
 
-(2): b: The odds ratio. (For each dollar you bet, the dollar amount you will get if you win.) In our implementation, b is estimated by Predicted_CO ratio. 
+(2): b: The odds ratio. (For each dollar you bet, the dollar amount you will get if you win.) In our implementation, b is estimated by Predicted_CO ratio, which is result of Linear Regression. 
 
 Then Kelly Criterion specifies that for each time, you should bet a fraction f of your current money, where f = (p*(b+1)-1)/b.
 
 Then for each individual stock, we allocate 1,000 dollars hypothetically, then each time step use Kelly Criterion to decide the dollar amount we want to bet, and using the current price, decide the quantity of stock we want to bet.
 
-After this Portofolio Optimization procedure, the PnL curve (Profit and Loss) looks like the following, with Sharpe ratio = 3.19. Initially, we have 112,000 dollars, after 200 days, we have 136,517 dollars. So the return is 21.89%. 
+After this Portfolio Optimization procedure, the PnL curve (Profit and Loss) looks like the following, with Sharpe ratio = 3.19. Initially, we have 112,000 dollars, after 200 days, we have 136,517 dollars. So the return is 21.89%. 
 
 <img src="https://github.com/Tongcheng/4741_TrendTrade/blob/master/PnLCurve/PnLCurve.png" height="360">
 
